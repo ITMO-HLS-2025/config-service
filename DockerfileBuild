@@ -1,0 +1,7 @@
+FROM maven:3.9.12-eclipse-temurin-21 AS build
+WORKDIR /home/maven/project
+
+VOLUME /home/maven/project
+VOLUME /home/maven/.m2
+
+CMD ["mvn", "clean", "package", "-Dmaven.test.skip=true"]
