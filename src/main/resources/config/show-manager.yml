@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://show-db:5432/show_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka

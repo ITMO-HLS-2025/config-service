@@ -1,0 +1,35 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+    healthcheck:
+      enabled: true
+
+info:
+  application:
+    name: @project.name@
+    version: @project.version@
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, health-component, info, beans, metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
