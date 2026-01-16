@@ -5,11 +5,9 @@ spring:
   application:
     name: config-server
   profiles:
-    active: composite
+    active: native
   cloud:
     config:
       server:
-        composite:
-          - type: native
-            search-locations: classpath:/config
-        bootstrap: true
+        native:
+          search-locations: file:./config
