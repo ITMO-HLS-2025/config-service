@@ -13,3 +13,9 @@ spring:
           - type: native
             search-locations: classpath:/config
         bootstrap: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
