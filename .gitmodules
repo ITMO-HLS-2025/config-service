@@ -1,0 +1,4 @@
+[submodule "config"]
+	path = config
+	url = https://github.com/ITMO-HLS-2025/config.git
+	branch = master
