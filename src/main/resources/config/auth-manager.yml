@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://auth-db:5432/auth_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+
+server:
+  port: 8083
+
+auth:
+  jwt:
+    secret: ${AUTH_JWT_SECRET:u4f8r7v2r6n1k9z3p5t8q1m4x7y2c6b9a4s8d7f6g5h3j2k1l0}
+    ttl-seconds: 3600
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka

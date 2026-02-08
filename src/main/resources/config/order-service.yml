@@ -39,3 +39,7 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql: TRACE
     org.flywaydb: DEBUG
+
+auth:
+  jwt:
+    secret: ${AUTH_JWT_SECRET:u4f8r7v2r6n1k9z3p5t8q1m4x7y2c6b9a4s8d7f6g5h3j2k1l0}

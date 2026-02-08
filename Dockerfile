@@ -3,7 +3,7 @@ WORKDIR /workspace
 
 COPY pom.xml pom.xml
 COPY src src
-RUN mvn -q -DskipTests package
+RUN --mount=type=cache,target=/root/.m2 mvn -q -DskipTests -T 1C package
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
