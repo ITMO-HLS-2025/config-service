@@ -13,6 +13,11 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
     validate-on-migrate: true
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: hls
+    password: hls
 
 server:
   port: 8083

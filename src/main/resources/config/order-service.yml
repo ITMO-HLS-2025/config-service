@@ -24,6 +24,11 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: false
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: hls
+    password: hls
 
 server:
   port: 8080

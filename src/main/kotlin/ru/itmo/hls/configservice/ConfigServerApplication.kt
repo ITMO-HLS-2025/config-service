@@ -1,4 +1,4 @@
-package ru.itmo.hls
+package ru.itmo.hls.configservice
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -11,4 +11,3 @@ class ConfigServerApplication
 fun main(args: Array<String>) {
     runApplication<ConfigServerApplication>(*args)
 }
-
