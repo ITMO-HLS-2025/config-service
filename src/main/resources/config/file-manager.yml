@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://file-db:5432/file_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    encoding: UTF-8
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: hls
+    password: hls
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+    org.flywaydb: DEBUG
+
+storage:
+  base-path: ${STORAGE_BASE_PATH:/data/files}
+
+auth:
+  jwt:
+    secret: ${AUTH_JWT_SECRET:u4f8r7v2r6n1k9z3p5t8q1m4x7y2c6b9a4s8d7f6g5h3j2k1l0}
